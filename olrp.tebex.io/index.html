@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no">
+
+    <title>OLRP · مرحباً</title>
+
+    <link rel="shortcut icon" href="https://dunb17ur4ymx4.cloudfront.net/webstore/favicons/82832d7f376d14243bba4583d4a4d67b323263e4.png">
+
+    <script type="text/javascript">
+        const __kTemplateConstants = {
+            loginRequired: true,
+            isLoggedIn: false,
+            toast: null,
+            checkoutTheme: `dark`,
+            locale: `en_US`
+        }
+
+        function __(id) {
+            const strings = {
+                "Add to Basket": `أضف إلى السلة`,
+                "Added to Basket": `Added to Basket`,
+                "Subscribe": `اشتراك`,
+                "Gift this package": `إهداء هذه الباقة`,
+                "Gift": `Gift`,
+                "Send gift": `Send gift`,
+                "Time Expired": `Time Expired`,
+                "Copied!": `Copied!`,
+                "Close": `إغلاق`,
+                "Enter a username to gift this package to": `أدخل اسم المستخدم لإهداء هذه الباقة إليه`,
+                "Failed to add to basket": `Failed to add to basket`,
+                "Basket": `Basket`,
+                "Basket is empty": `Basket is empty`,
+                "Please fill in all fields": `Please fill in all fields`,
+                "Gift sent to": `Gift sent to`,
+                "Failed to send gift": `Failed to send gift`,
+                "Please enter a valid username": `Please enter a valid username`
+            }
+
+            return strings[id] ? ? id
+        }
+    </script>
+    <script defer src="https://js.tebex.io/v/1.js"></script>
+    <script defer src="/template-assets/main.js?updated=adee665b25eb264b35f5976fb3158b2a0f4c01b5471f2f115e8c9c186024ac8f"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="/template-assets/shared.css?updated=17b79c61e06908722d512b87b68a6e4089adf5e249566a695b0d7738c641faed" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Poppins:wght@200;400;700&display=swap');
+        :root {
+            --color-primary: #41C4C3;
+            --bg-image: url("https://webstore-template-assets.tebex.io/images/page-bg.jpg");
+        }
+
+        body {
+            font-family: "IBM Plex Sans Arabic", serif;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            max-height: 400px;
+            z-index: -1;
+            background: var(--bg-image) center center/cover no-repeat;
+            mask-image: linear-gradient(rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.25));
+            pointer-events: none;
+        }
+
+        .btn-primary,
+        .btn-secondary,
+        .btn-tertiary {
+            border-radius: 10px;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            box-shadow: 0 0 6px rgb(from var(--btn-color-bg-hover) r g b/0.6);
+        }
+
+        .quantity-field {
+            border-radius: 5px;
+        }
+
+        .site-header-inner .info .image {
+            border-radius: 5px;
+        }
+
+        .site-header-inner .user-name ul li {
+            overflow: hidden;
+        }
+
+        .site-header-inner .user-name ul li:first-child {
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+        }
+
+        .site-header-inner .user-name ul li:last-child {
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+
+        .site-sale-banner {
+            border-radius: 5px;
+        }
+
+        .site-home-categories .category {
+            border-radius: 5px;
+            padding: 20px var(--widget-padding);
+            background: var(--color-brighter-bg);
+            transition: color 0.15s ease-in-out;
+        }
+
+        .site-home-categories .category:hover {
+            color: var(--color-primary);
+        }
+
+        .category-description {
+            border-radius: 5px;
+            background: var(--color-brighter-bg);
+        }
+
+        .store-text {
+            border-radius: 15px;
+            direction: rtl;
+            background: var(--color-brighter-bg);
+        }
+
+        .store-text h1,
+        .store-text h2,
+        .store-text h3,
+        .store-text h4,
+        .store-text h5,
+        .store-text h6 {
+            text-align: center;
+        }
+
+        .store-products-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 24px 36px;
+            direction: rtl;
+        }
+
+        .store-products-list .store-product,
+        .store-products-images .store-product {
+            border-radius: 15px;
+            background: var(--color-brighter-bg);
+        }
+
+        .store-products-images .store-product {
+            text-align: center;
+        }
+
+        .widget-title {
+            text-align: center;
+        }
+
+        .widget .store-product {
+            text-align: center;
+        }
+
+        .no-products {
+            color: var(--color-text-secondary);
+            background: var(--color-brighter-bg);
+            border-radius: 5px;
+        }
+
+        .store-product-full {
+            border-radius: 5px;
+            background: var(--color-brighter-bg);
+        }
+
+        .store-product .quantity-field {
+            border-radius: 5px;
+            background: var(--color-brighter-bg);
+        }
+
+        .store-product .quantity-field input[type=number] {
+            border: none;
+        }
+
+        @media (width>960px) {
+            .navigation-horizontal>ul {
+                border-radius: 5px;
+            }
+        }
+
+        .navigation-horizontal .has-children>ul {
+            border-radius: 5px;
+        }
+
+        .widget {
+            border-radius: 15px;
+            background: var(--color-brighter-bg);
+        }
+
+        @media (width <=960px) {
+            .widget.site-navigation {
+                border-radius: 0;
+                background: transparent;
+            }
+        }
+
+        .widget-gift-card .gift-card-input {
+            border-radius: 2px;
+        }
+
+        .widget-top-donator .avatar {
+            border-radius: 50%;
+        }
+
+        .widget-community-goal .progress,
+        .widget-goal .progress {
+            border-radius: 2px;
+        }
+
+        .widget-community-goal .progress-bar,
+        .widget-goal .progress-bar {
+            border-radius: 2px;
+        }
+
+        @media (width>600px) {
+            .popup-content {
+                border-radius: 15px;
+            }
+        }
+
+        .popup-close {
+            border-radius: 0 5px 0 5px;
+        }
+
+        .basket-popup-content,
+        .basket-popup-content .popup-close {
+            border-radius: 0;
+        }
+
+        .basket-items {
+            padding: var(--widget-padding) calc(var(--content-padding) - var(--widget-padding));
+        }
+
+        .basket-item {
+            border-radius: 5px;
+        }
+
+        .basket-item .quantity {
+            border-radius: 2px;
+        }
+
+        .toast {
+            border-radius: 6px;
+        }
+
+        .toast-close {
+            border-radius: 2px;
+        }
+    </style>
+    <style>
+        :root {
+            --color-primary: #21b9c4;
+            --color-primary-hover: #14848c;
+            --color-primary-text: #ffffff;
+            --color-primary-text-hover: #b5b5b5;
+            --bg-image: url(//cdn.tebex.io/webstore/1540636/images/1540636-7e0b53b9e267958111c47af9da9f9509f6160070.png);
+            --text-price: "السعر";
+        }
+    </style>
+    <script type="text/javascript">
+        (function(c, l, a, r, i, t, y) {
+            c[a] = c[a] || function() {
+                (c[a].q = c[a].q || []).push(arguments)
+            };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "fxlepb8eap");
+    </script>
+</head>
+
+<body class="is-navigation-vertical is-sidebar-right home-categories-enabled page-index">
+    <div class="site" data-toast="">
+        <header id="header" class="site-header">
+            <div class="site-header-inner">
+                <div class="actions">
+                    <button class="btn-tertiary btn-icon toggle-navigation">Toggle menu</button>
+                </div>
+
+                <a class="log-in btn-tertiary" href="/login">تسجيل الدخول</a>
+
+                <h1 class="site-title">
+                    <a href="/">
+                  <img src="//dunb17ur4ymx4.cloudfront.net/webstore/logos/bd1b1caaacbc2aeb293f9d0d9b606c21a3fb60e5.png" alt="OLRP" />
+              </a>
+                </h1>
+
+                <div class="info server">
+                    <img class="image" src="https://webstore-template-assets.tebex.io/images/server-logo.svg" alt="Server name" />
+                    <strong class="title">
+          Website
+        </strong>
+                    <a class="action" href="https://0utlawrp.com/" target="_blank">Click to Visit</a>
+                </div>
+
+                <a class="info discord" href="https://discord.gg/0lrp" target="_blank">
+        <img
+          class="image"
+          src="https://webstore-template-assets.tebex.io/images/discord.svg"
+          alt="Discord"
+        />
+        <strong class="title">Join our Discord</strong>
+        <span class="action">Click to Join</span>
+      </a>
+            </div>
+
+
+        </header>
+
+
+        <div class="site-content site-content-widgets">
+            <main class="store-text text-content">
+                <p>أهلا وسهلا بكم في متجر أوت لاو<br /><br /><strong>أهم المنتجات:</strong></p>
+                <div class="store-products-images">
+                    <article class="store-product">
+                        <a class="image-link" href="https://olrp.tebex.io/package/6631293" title=" Click for more details.">
+                        <img class="image" src="//cdn.tebex.io/webstore/1540636/images/1540636-100b96f68056d4e1fbf061bcfab8c8a159634171.png" alt="أولوية يومية" />
+                    </a>
+
+                        <h4 class="product-title">
+                            <a href="https://olrp.tebex.io/package/6631293">
+                            أولوية يومية
+                        </a>
+                        </h4>
+                    </article>
+                    <article class="store-product">
+                        <a class="image-link" href="https://olrp.tebex.io/package/6634212" title=" Click for more details.">
+                        <img class="image" src="//cdn.tebex.io/webstore/1540636/images/1540636-87b42809b1f6ab1749662a03718dc2f90feec4e0.png" alt="التفعيل الفوري" />
+                    </a>
+
+                        <h4 class="product-title">
+                            <a href="https://olrp.tebex.io/package/6634212">
+                            التفعيل الفوري
+                        </a>
+                        </h4>
+                    </article>
+                    <article class="store-product">
+                        <a class="image-link" href="https://olrp.tebex.io/package/6671397" title=" Click for more details.">
+                        <img class="image" src="//cdn.tebex.io/webstore/1540636/images/1540636-2188a0ebc2f1ec171c3b71d304a608fbd1946ef3.png" alt="رتبة المزاد" />
+                    </a>
+
+                        <h4 class="product-title">
+                            <a href="https://olrp.tebex.io/package/6671397">
+                            رتبة المزاد
+                        </a>
+                        </h4>
+                    </article>
+
+
+                </div>
+            </main>
+
+            <aside class="store-sidebar">
+                <nav class="site-navigation widget navigation-vertical" id="site-navigation">
+                    <ul class="navigation-list">
+                        <li class="active">
+                            <a class="link-active" href="/">الرئيسية</a>
+                        </li>
+
+                        <li class="
+                      ">
+                            <a href="/category/altfaayl">التفعيل </a>
+
+                        </li>
+                        <li class="
+                      ">
+                            <a href="/category/priority">أولويات</a>
+
+                        </li>
+                        <li class="
+                      ">
+                            <a href="/category/syarat">لوحة المبركبات</a>
+
+                        </li>
+                        <li class="
+                      ">
+                            <a href="/category/shkhsyat">شخصيات </a>
+
+                        </li>
+                        <li class="
+                      ">
+                            <a href="/category/mazad">رتبة المزاد</a>
+
+                        </li>
+
+
+                    </ul>
+
+                    <button class="btn-tertiary btn-icon close-navigation">Close menu</button>
+                </nav>
+
+
+            </aside>
+        </div>
+
+        <footer class="site-footer">
+            <div class="site-footer-inner">
+                <ul class="we-accept">
+                    <li><img src="https://webstore-template-assets.tebex.io/images/we-accept/apple.svg" alt="Apple Pay"></li>
+                    <li><img src="https://webstore-template-assets.tebex.io/images/we-accept/google.png" alt="Google Pay"></li>
+                    <li><img src="https://webstore-template-assets.tebex.io/images/we-accept/mastercard.png" alt="Mastercard"></li>
+                    <li><img src="https://webstore-template-assets.tebex.io/images/we-accept/visa.png" alt="Visa"></li>
+                    <li><img src="https://webstore-template-assets.tebex.io/images/we-accept/amex.png" alt="American Express"></li>
+                </ul>
+
+                <p class="copyright">© 2024 OLRP. All Rights Reserved. We do not have affiliation with any real world brands.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        if (typeof jQuery === 'function') {
+            jQuery(".card-container").eq(0).remove();
+        }
+    </script>
+    <script type="text/javascript" src="/assets/js/discord.js"></script>
+    <div id="waiting-overlay" style="display: none;">
+        <i class="fa fa-cog fa-spin fa-3x"></i>
+    </div>
+
+    <!--
+    Removal of the Tebex footer violates our Terms & Conditions.
+    Due to Tebex being the Merchant of Record, the footer is a contractual requirement by our payment processing partners such as VISA & Mastercard.
+    Any attempt to hide or make the inner text of the footer unreadable will result in an immediate lock of your store & available funds with no exceptions.
+    We perform random checks on all stores to ensure you are abiding by this requirement.
+    We’re happy for you to change the colors and max-width of the footer to suit your design requirements, which you can learn how to do so by reading the documentation available at https://docs.tebex.io/developers/templates/footer
+-->
+    <tebex-footer>
+        <template shadowrootmode="open">
+        <div class="tebex-footer-wrapper ">
+            <div class="tebex-footer-inner">
+                <div class="tebex-footer-image">
+                    <a href="https://www.tebex.io" target="_blank">
+                        <svg width="61" height="29" viewBox="0 0 61 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.22379 7.36903C8.42455 5.55275 10.5991 5.02655 10.5991 5.02655C10.5991 5.02655 6.44895 4.02049 6.44895 0C6.44895 4.02049 2.29644 5.02655 2.29644 5.02655C2.29644 5.02655 4.47176 5.55275 5.67331 7.36903H0V14.3322L1.28979 12.1758H3.86857V24.1932L9.02693 29V14.2859C7.71147 13.7208 5.8217 12.2842 5.14472 11.1885C6.30056 11.5136 7.85104 11.9411 9.05821 12.1766H12.8963V7.36903H7.22379Z" />
+                            <g clip-path="url(#clip0_995_406)">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M35.9134 14.0983C36.5813 13.2542 37.62 12.7915 38.8665 12.7915H38.868C41.2702 12.7915 42.9475 14.4698 42.9475 16.8028C42.9475 19.1358 41.2194 20.8283 38.8357 20.8283C37.5616 20.8283 36.5474 20.3884 35.8888 19.5529L35.8457 20.6418H34.0253V9.87207H35.9134V14.0983ZM38.7342 19.3536C40.1961 19.3536 41.2163 18.3259 41.2163 16.8555C41.2163 15.3509 40.3084 14.3417 38.828 14.3417C37.3477 14.3417 36.3135 15.3381 36.3135 16.8555C36.3135 18.3728 37.2722 19.3536 38.7342 19.3536ZM22.7747 19.1045C22.3069 19.4347 21.9345 19.5628 21.4436 19.5628C20.7204 19.5628 20.3049 19.1557 20.3049 18.444V14.4271H23.3395V12.8812H20.3049V10.8742H18.4167V12.8798H17.1041L16.6763 14.4257H18.4167V18.4583C18.4167 20.2162 19.4277 21.1841 21.2651 21.1841C22.1038 21.1841 22.8517 20.945 23.5488 20.4525L23.5996 20.4169L22.8486 19.0518L22.7747 19.1031V19.1045ZM28.2885 12.7303C25.874 12.7303 24.1228 14.4242 24.1228 16.7572C24.1228 19.2127 25.7894 20.7984 28.367 20.7984C29.8396 20.7984 30.9399 20.3827 31.8263 19.4902L31.8725 19.4447L30.8707 18.3273L30.8107 18.3814C30.1197 19.0063 29.4057 19.2853 28.4916 19.2853C27.0574 19.2853 26.1756 18.5579 26.0017 17.2327H32.2049V17.1615C32.2049 17.0903 32.2079 17.0234 32.2125 16.9565C32.2172 16.8868 32.2202 16.817 32.2202 16.743C32.2202 14.3061 30.6768 12.7303 28.2885 12.7303ZM26.0402 16.0882C26.2803 14.9794 27.1482 14.2677 28.2731 14.2677C29.398 14.2677 30.1582 14.9295 30.3244 16.0882H26.0402ZM48.0719 12.7303C45.6575 12.7303 43.9062 14.4242 43.9062 16.7572C43.9062 19.2127 45.5728 20.7984 48.1504 20.7984C49.6231 20.7984 50.7234 20.3827 51.6097 19.4902L51.6559 19.4447L50.6541 18.3273L50.5941 18.3814C49.9032 19.0063 49.1891 19.2853 48.275 19.2853C46.8408 19.2853 45.9591 18.5579 45.7852 17.2327H51.9883V17.1615C51.9883 17.0903 51.9914 17.0234 51.996 16.9565C52.0006 16.8868 52.0037 16.817 52.0037 16.743C52.0037 14.3061 50.4602 12.7303 48.0719 12.7303ZM48.0565 14.2662C49.1984 14.2662 49.9416 14.9281 50.1078 16.0868H45.8237C46.0637 14.9779 46.9316 14.2662 48.0565 14.2662ZM60.2258 12.8798L57.2973 16.5708L60.5566 20.6418H58.313L56.2078 17.8633L54.1488 20.6418H52.016L55.1645 16.6733L52.1576 12.8798H54.4012L56.254 15.4078L58.0914 12.8798H60.2258Z" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_995_406">
+                                    <rect width="43.8803" height="11.3121" fill="white" transform="translate(16.6763 9.87207)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="tebex-footer-text">
+                    This website and its checkout process is owned &amp; operated by Tebex Limited, who handle product fulfilment, billing support and refunds.
+                </div>
+
+                <div class="tebex-footer-links">
+                    <a href="/terms/impressum">Impressum</a>
+                    <a href="/terms/checkout">Terms & Conditions</a>
+                    <a href="/terms/privacy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        <style>
+            :host {
+                all: unset !important;
+                zoom: 1 !important;
+                width: 100% !important;
+                min-height: 35px !important;
+                box-sizing: border-box !important;
+                z-index: 9999999999 !important;
+            }
+
+            :host([absolute]) {
+                position: absolute !important;
+                bottom: 0 !important;
+            }
+
+            * {
+                box-sizing: border-box !important;
+            }
+
+            .tebex-footer-wrapper {
+                all: unset !important;
+                display: flex !important;
+                width: 100% !important;
+                min-height: 35px !important;
+                padding: 2px 32px !important;
+                font-size: 11px !important;
+                font-weight: 400 !important;
+                font-family: Arial, sans-serif !important;
+                box-sizing: border-box !important;
+                --text: var(--tebex-legal-footer-text-color, #6a6a6a) !important;
+                --bg: var(--tebex-legal-footer-background-color, #fff) !important;
+                color: var(--text) !important; /* fallback */
+                color: rgb(from var(--text) r g b / 1) !important;
+                background-color: var(--bg) !important; /* fallback */
+                background-color: rgb(from var(--bg) r g b / 1) !important;
+                border-top: 1px solid var(--tebex-legal-footer-border-color, #efefef) !important;
+            }
+
+            .tebex-footer-wrapper-dark {
+                --text: var(--tebex-legal-footer-text-color, #b2b2b2) !important;
+                --bg: var(--tebex-legal-footer-background-color, #2e2e2e) !important;
+                border-color: var(--tebex-legal-footer-border-color, #404040) !important;
+            }
+
+            .tebex-footer-inner {
+                width: 100% !important;
+                height: 100% !important;
+                max-width: var(--tebex-legal-footer-max-width, 100%) !important; /* fallback */
+                max-width: max(var(--tebex-legal-footer-max-width, 100%), 320px) !important;
+                margin: 0 auto !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                align-items: center !important;
+                container-type: inline-size !important;
+            }
+
+            .tebex-footer-image {
+                padding-right: 32px !important;
+
+                svg path {
+                    fill: var(--tebex-legal-footer-logo-color, #9C9FA9) !important; 
+                }
+            }
+
+            .tebex-footer-text {
+                flex-grow: 1 !important;
+                padding-right: 32px !important;
+                color: inherit !important;
+                margin-top: 2px !important;
+            }
+
+            .tebex-footer-links {
+                margin-top: 2px !important;
+            }
+
+            .tebex-footer-links a {
+                color: inherit !important;
+                text-decoration: underline !important;
+            }
+
+            .tebex-footer-links > a:not(:last-child) {
+                margin-right: 12px !important;
+            }
+
+            @media screen and (max-width: 900px) {
+                .tebex-footer-wrapper {
+                    min-height: 70px !important;
+                    padding: 8px 16px !important;
+                    flex-wrap: wrap !important;
+                }
+
+                .tebex-footer-image {
+                    display: none !important;
+                }
+
+                .tebex-footer-links {
+                    margin-top: 4px !important;
+                    min-width: unset !important;
+                }
+            }
+
+            @container (max-width: 900px) {
+                .tebex-footer-image {
+                    display: none !important;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                .tebex-footer-wrapper{
+                    min-height: 80px !important;
+                    padding: 4px 16px !important;
+                }
+            }
+        </style>
+    </template>
+    </tebex-footer>
+
+    <script type="text/javascript">
+        (() => {
+
+            const notAllowed = () => {
+                const err = 'Removal of the Tebex footer violates our Terms & Conditions. Please refer to the documentation at https://docs.tebex.io/developers/templates/footer';
+                console.warn(err);
+            };
+
+            // Used to access DOM methods that are gated externally
+            const SHADOW_ROOT = Symbol();
+            const ATTACH_SHADOW = Symbol();
+            const QUERY_SELECTOR = Symbol();
+            const SET_ATTRIBUTE = Symbol();
+            const REMOVE_ATTRIBUTE = Symbol();
+            const GATE_ON = Symbol();
+
+            class TebexFooter extends HTMLElement {
+                constructor() {
+                    super();
+
+                    this[SHADOW_ROOT] = this.shadowRoot;
+                    this[ATTACH_SHADOW] = this.attachShadow;
+                    this[QUERY_SELECTOR] = this.querySelector;
+                    this[SET_ATTRIBUTE] = this.setAttribute;
+                    this[REMOVE_ATTRIBUTE] = this.removeAttribute;
+                    this[GATE_ON] = true;
+
+                    // Prevent shadow DOM access
+                    this.attachShadow = notAllowed;
+                    Object.defineProperty(this, 'shadowRoot', {
+                        get: () => null,
+                        set: notAllowed
+                    });
+
+                    // Polyfill for declarative shadow DOM
+                    if (!this[SHADOW_ROOT]) {
+                        const template = this[QUERY_SELECTOR]('template[shadowrootmode]');
+                        const mode = template.getAttribute('shadowrootmode');
+                        const shadowRoot = this[ATTACH_SHADOW]({
+                            mode
+                        });
+                        shadowRoot.appendChild(template.content);
+                        this[SHADOW_ROOT] = shadowRoot;
+                        template.remove();
+                    }
+
+                    // Warn against edits to internal shadow DOM content
+                    const observer = new MutationObserver((mutationList, observer) => {
+                        if (this[GATE_ON])
+                            notAllowed();
+                        this[GATE_ON] = true;
+                    });
+                    const observerConfig = {
+                        attributes: true,
+                        childList: true,
+                        characterData: true,
+                        subtree: true
+                    };
+                    observer.observe(this[SHADOW_ROOT], observerConfig);
+
+                    this.#reposition();
+
+                    document.addEventListener('DOMContentLoaded', () => {
+                        this.#reposition();
+                    });
+
+                    function debounce(func) {
+                        var timer;
+                        return function(event) {
+                            if (timer) clearTimeout(timer);
+                            timer = setTimeout(func, 100, event);
+                        };
+                    }
+
+                    addEventListener('resize', debounce(() => {
+                        this.#reposition();
+                    }));
+
+                    addEventListener('scroll', debounce(() => {
+                        this.#reposition();
+                    }));
+                }
+
+                disconnectedCallback() {
+                    notAllowed();
+                }
+
+                #
+                reposition() {
+                    this[GATE_ON] = false;
+                    if (document.body.clientHeight < (window.innerHeight - this.clientHeight))
+                        this[SET_ATTRIBUTE]('absolute', '');
+                    else
+                        this[REMOVE_ATTRIBUTE]('absolute');
+                }
+            }
+
+            customElements.define('tebex-footer', TebexFooter);
+        })();
+    </script>
+
+</body>
+
+</html>
